@@ -48,8 +48,8 @@ function PixelCanvas(sourceImage,destinationElement,repaintCallback) {
 			function(callback, element){
 				return window.setTimeout(callback, Math.floor(1000/renderFramerate));
 			};
-    })();
-    console.log(requestAnimFrame);
+	})();
+	
 	function generateID(stringLength) {
 		var idComposite = "";
 		stringLength = stringLength ? stringLength : 10;
@@ -86,13 +86,11 @@ function PixelCanvas(sourceImage,destinationElement,repaintCallback) {
 		outputCanvasHeight = destinationElement.offsetHeight;
 		outputCanvasWidth = destinationElement.offsetWidth;
 		outputAspectRatio = outputCanvasWidth / outputCanvasHeight;
-		console.log("Rendering to %sx%s area. Aspect %s",outputCanvasHeight,outputCanvasWidth,outputAspectRatio);
 
 		// Get input rendering dimensions
 		sourceImageWidth = sourceImage.width;
 		sourceImageHeight = sourceImage.height;
 		inputAspectRatio = sourceImageWidth / sourceImageHeight;
-		console.log("Rendering from %sx%s source. Aspect %s",sourceImageWidth,sourceImageHeight,inputAspectRatio);
 
 		// Assign dimensions back to canvas
 		// (if we're not rendering directly into a canvas, that is);
@@ -243,16 +241,16 @@ function PixelCanvas(sourceImage,destinationElement,repaintCallback) {
 		if (!usingWebkitCanvasMethod) {
 			destinationElement.style.backgroundImage = "url('" + canvas.toDataURL() + "')";
 		}
-		
+
 		if (typeof(repaintCallback) === "function") {
 			repaintCallback(context);
 		}
-		
+
 		if (currentIntensity < 100) {
 			currentIntensity = currentIntensity + increaseIntensityByPercentage > 100 ? 100 : currentIntensity + increaseIntensityByPercentage;
 		}
 
-		requestAnimFrame(redrawPixels,canvas);
+		frameInterval = requestAnimFrame(redrawPixels);
 		return apiInterface;
 	}
 
@@ -263,10 +261,9 @@ function PixelCanvas(sourceImage,destinationElement,repaintCallback) {
 			calculateDrawMetrics();
 			getAveragedPixels();
 			redrawPixels();
-			frameInterval = requestAnimFrame(redrawPixels,canvas);
 			initialised = true;
 		}
-		
+
 		return apiInterface;
 	}
 
@@ -291,7 +288,7 @@ function PixelCanvas(sourceImage,destinationElement,repaintCallback) {
 			return apiInterface;
 		},
 		"start": function() {
-			frameInterval = requestAnimFrame(redrawPixels,canvas);
+			frameInterval = requestAnimFrame(redrawPixels);
 
 			return apiInterface;
 		},
