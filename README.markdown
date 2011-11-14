@@ -13,3 +13,5 @@ Has a basic API. Docs to come.
 * More effect customisation
 * Better performance through direct pixel writes (as well as reads)
 * Use better method for Firefox CSS backgrounds
+
+<small><strong>Please note</strong> the images in this repository are (c) Me, all rights are reserved. But use them privately with my blessing!</small>
