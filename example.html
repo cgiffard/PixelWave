@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf8" />
+		<title>Pixelation Test</title>
+	</head>
+	<body>
+		<img src="images/header-background-alley.jpg" />
+		<img src="images/header-background-flower.jpg" />
+		<script type="text/javascript" src="js/canvas-pixelwave.js"></script>
+		<script type="text/javascript">
+			window.addEventListener("load",function(){
+				var output = [];
+				
+				document.querySelectorAll("img")[0].style.display = "none";
+				document.querySelectorAll("img")[1].style.display = "none";
+
+				output[0] = document.createElement("div");
+				output[0].style.float = "left";
+				output[0].style.top = "0px";
+				output[0].style.left = "0px";
+				output[0].style.height = "300px";
+				output[0].style.width = "200px";
+				output[0].style.marginRight = "2em";
+				output[0].style.marginBottom = "2em";
+				document.body.appendChild(output[0]);
+
+				PixelCanvas(document.querySelectorAll("img")[0],output[0]).setStyle({
+						pixelWidth: 10,
+						pixelHeight: 10,
+						borderWidth: 1
+					})
+					.init();
+
+				output[1] = document.createElement("div");
+				output[1].style.float = "left";
+				output[1].style.top = "0px";
+				output[1].style.left = "0px";
+				output[1].style.height = "300px";
+				output[1].style.width = "200px";
+				output[1].style.marginRight = "2em";
+				output[1].style.marginBottom = "2em";
+				document.body.appendChild(output[1]);
+
+				PixelCanvas(document.querySelectorAll("img")[0],output[1]).setStyle({
+						pixelWidth: 20,
+						pixelHeight: 20,
+						borderWidth: 0
+					})
+					.init();
+				
+				output[2] = document.createElement("div");
+				output[2].style.float = "left";
+				output[2].style.top = "0px";
+				output[2].style.left = "0px";
+				output[2].style.height = "300px";
+				output[2].style.width = "200px";
+				output[2].style.marginRight = "2em";
+				output[2].style.marginBottom = "2em";
+				document.body.appendChild(output[2]);
+
+				PixelCanvas(document.querySelectorAll("img")[0],output[2]).setStyle({
+						pixelWidth: 5,
+						pixelHeight: 5,
+						borderWidth: 20
+					})
+					.init();
+				
+				output[3] = document.createElement("div");
+				output[3].style.float = "left";
+				output[3].style.top = "0px";
+				output[3].style.left = "0px";
+				output[3].style.height = "300px";
+				output[3].style.width = "200px";
+				output[3].style.marginRight = "2em";
+				output[3].style.marginBottom = "2em";
+				document.body.appendChild(output[3]);
+
+				PixelCanvas(document.querySelectorAll("img")[0],output[3]).setStyle({
+						pixelWidth: 5,
+						pixelHeight: 30,
+						borderWidth: 0
+					})
+					.init();
+				
+				output[4] = document.createElement("div");
+				output[4].style.float = "left";
+				output[4].style.top = "0px";
+				output[4].style.left = "0px";
+				output[4].style.height = "300px";
+				output[4].style.width = "200px";
+				output[4].style.marginRight = "2em";
+				output[4].style.marginBottom = "2em";
+				document.body.appendChild(output[4]);
+
+				PixelCanvas(document.querySelectorAll("img")[0],output[4]).setStyle({
+						pixelWidth: 40,
+						pixelHeight: 40,
+						borderWidth: 0
+					})
+					.init();
+				
+				output[5] = document.createElement("div");
+				output[5].style.float = "left";
+				output[5].style.top = "0px";
+				output[5].style.left = "0px";
+				output[5].style.height = "300px";
+				output[5].style.width = "200px";
+				output[5].style.marginRight = "2em";
+				output[5].style.marginBottom = "2em";
+				document.body.appendChild(output[5]);
+
+				PixelCanvas(document.querySelectorAll("img")[1],output[5]).setStyle({
+						pixelWidth: 10,
+						pixelHeight: 10,
+						borderWidth: 1
+					})
+					.init();
+
+				output[6] = document.createElement("div");
+				output[6].style.float = "left";
+				output[6].style.top = "0px";
+				output[6].style.left = "0px";
+				output[6].style.height = "300px";
+				output[6].style.width = "200px";
+				output[6].style.marginRight = "2em";
+				output[6].style.marginBottom = "2em";
+				document.body.appendChild(output[6]);
+
+				PixelCanvas(document.querySelectorAll("img")[1],output[6]).setStyle({
+						pixelWidth: 20,
+						pixelHeight: 20,
+						borderWidth: 0
+					})
+					.init();
+				
+				output[7] = document.createElement("div");
+				output[7].style.float = "left";
+				output[7].style.top = "0px";
+				output[7].style.left = "0px";
+				output[7].style.height = "300px";
+				output[7].style.width = "200px";
+				output[7].style.marginRight = "2em";
+				output[7].style.marginBottom = "2em";
+				document.body.appendChild(output[7]);
+
+				PixelCanvas(document.querySelectorAll("img")[1],output[7]).setStyle({
+						pixelWidth: 5,
+						pixelHeight: 5,
+						borderWidth: 20
+					})
+					.init();
+				
+				output[8] = document.createElement("div");
+				output[8].style.float = "left";
+				output[8].style.top = "0px";
+				output[8].style.left = "0px";
+				output[8].style.height = "300px";
+				output[8].style.width = "200px";
+				output[8].style.marginRight = "2em";
+				output[8].style.marginBottom = "2em";
+				document.body.appendChild(output[8]);
+
+				PixelCanvas(document.querySelectorAll("img")[1],output[8]).setStyle({
+						pixelWidth: 5,
+						pixelHeight: 30,
+						borderWidth: 0
+					})
+					.init();
+				
+				output[9] = document.createElement("div");
+				output[9].style.float = "left";
+				output[9].style.top = "0px";
+				output[9].style.left = "0px";
+				output[9].style.height = "300px";
+				output[9].style.width = "200px";
+				output[9].style.marginRight = "2em";
+				output[9].style.marginBottom = "2em";
+				document.body.appendChild(output[9]);
+
+				PixelCanvas(document.querySelectorAll("img")[1],output[9]).setStyle({
+						pixelWidth: 40,
+						pixelHeight: 40,
+						borderWidth: 0
+					})
+					.init();
+			});
+		</script>
+	</body>
+</html>
